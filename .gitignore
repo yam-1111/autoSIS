@@ -1,0 +1,9 @@
+venv/
+scrape.py
+scrape2.py
+scrape3.py
+*.png
+*.mhtml
+*.html
+# Ignore __pycache__ folders
+__pycache__/
