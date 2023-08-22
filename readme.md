@@ -1,9 +1,9 @@
 
 # autoSIS
 
-simple python api for accessing grades and student portal of [PUP-SIS](https://sisstudents.pup.edu.ph/)
+simple python api for viewing grades and student portal for [PUP-SIS](https://sisstudents.pup.edu.ph/)
 
-## ⚠ disclaimer
+## ⚠️ disclaimer
 The authors of this library are not responsible for any misusage, abuse, or illegal activities related to the usage of this library. It is crucial to exercise responsible and ethical behavior when utilizing this library.
 
 This library is intended for educational purposes. following the established protocols and guidelines set forth by the institution. We strongly discourage any activities that violate these protocols or engage in any form of unauthorized access.
@@ -16,10 +16,19 @@ This library is intended for educational purposes. following the established pro
 
 - **Ethical Use:** Use this library for legitimate and ethical purposes only. Engaging in any form of unauthorized access, data manipulation, or any other activities that violate the institution's policies is strictly prohibited.
 
-## usage
+## 🛠 Dependencies
+* [playwright](https://playwright.dev/python/docs/intro)
+* [selectolax](https://selectolax.readthedocs.io/)
 
-### installation
+## 🧰 Installation
+* linux / ms-windows
+install the necessary tools for playwright to function properly
+```
+playwright install-deps 
+playwright install firefox
+```
 
+## ⚙ Usage
 ### initialization
 ```
 from autoSIS.utils import autoSIS
@@ -27,13 +36,14 @@ from autoSIS.utils import autoSIS
 data = autoSIS(student_no=20xx-xxxxx-MN-0, student_birthday=1/01/1970, student_password=STUDENT_PASSWORD)
 ```
 
-#### check if all grades are encoded in portal
+
+### check if all grades are encoded in portal
 ```
 # checks if the current sem has complete grades encoded
 print(data.get_grades().is_complete())
 ```
 
-#### convert all data into pandas dataframe
+### convert all data into pandas dataframe
 ```
 df = data.get_grades().dataframe()
 ```
