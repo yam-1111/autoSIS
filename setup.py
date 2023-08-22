@@ -7,9 +7,9 @@ with open('requirements.txt') as f:
 setup(
     name='autoSIS',                # Set your library name
     version='0.1.0',               # Set your library version
-    packages=find_packages(),
+    packages=['autoSIS'],
     install_requires=requirements,  # Use the list from requirements.txt
-    # author='Your Name',
+    author='Anthony John',
     # author_email='your@email.com',
     description='simple python api for viewing grades',
     # url='https://github.com/your-username/your-repo',

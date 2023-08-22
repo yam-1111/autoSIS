@@ -18,6 +18,8 @@ This library is intended for educational purposes. following the established pro
 
 ## usage
 
+### installation
+
 ### initialization
 ```
 from autoSIS.utils import autoSIS
