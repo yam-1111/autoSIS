@@ -22,6 +22,7 @@ This library is intended for educational purposes. following the established pro
 
 ## 🧰 Installation
 * linux / ms-windows
+
 install the necessary tools for playwright to function properly
 ```
 playwright install-deps 
