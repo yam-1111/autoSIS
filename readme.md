@@ -23,6 +23,11 @@ This library is intended for educational purposes. following the established pro
 ## 🧰 Installation
 * linux / ms-windows
 
+
+```
+pip install git+https://github.com/yam-1111/autoSIS
+```
+
 install the necessary tools for playwright to function properly
 ```
 playwright install-deps 
@@ -33,8 +38,7 @@ playwright install firefox
 ### initialization
 ```
 from autoSIS.utils import autoSIS
-
-data = autoSIS(student_no=20xx-xxxxx-MN-0, student_birthday=1/01/1970, student_password=STUDENT_PASSWORD)
+data = autoSIS(student_no="20xx-xxxxx-MN-0", student_birthday="1/01/1970," student_password="STUDENT_PASSWORD")
 ```
 
 
