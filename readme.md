@@ -19,6 +19,7 @@ This library is intended for educational purposes. following the established pro
 ## 🛠 Dependencies
 * [playwright](https://playwright.dev/python/docs/intro)
 * [selectolax](https://selectolax.readthedocs.io/)
+* [pandas](https://pandas.pydata.org/)
 
 ## 🧰 Installation
 * linux / ms-windows
@@ -40,7 +41,7 @@ playwright install firefox
 from autoSIS.utils import autoSIS
 data = autoSIS(student_no="20xx-xxxxx-MN-0", student_birthday="1/01/1970," student_password="STUDENT_PASSWORD")
 ```
-
+automatic screenshot can be disable by adding `isscreenshot=False` on the function parameters
 
 ### check if all grades are encoded in portal
 ```
