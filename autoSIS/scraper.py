@@ -8,7 +8,13 @@ class dictWrapper:
     """
     converts the dict into class object
     """
-    def __init__(self, **kwargs):
+    def __init__(self, mapping=None, **kwargs):
+        # added mappings
+        if mapping:
+            kwargs = {
+                mapping.get(key, key): value
+                for key, value in kwargs.items()
+            }
         self.__dict__.update(kwargs)
     
     def __repr__(self):
@@ -17,8 +23,9 @@ class dictWrapper:
    
 
 class scraper:
-    def __init__(self, html_data : str):
+    def __init__(self, html_data : str, raw_text : bool, custom_mapping = None):
         self.html_data = html_data
+        self.custom_mapping = custom_mapping
 
         self.grades = []
         self.infos = []
@@ -87,7 +94,7 @@ class scraper:
         pulls all the grades from latest to the first semester of a year.
         returns : list(<grades_obj>)
         """
-        datas = [dictWrapper(**dict_obj) for dict_obj in self.convert_to_dict]
+        datas = [dictWrapper(mapping=self.custom_mapping,**dict_obj) for dict_obj in self.convert_to_dict]
         return datas
 
     def latest(self):
@@ -95,7 +102,7 @@ class scraper:
         pulls the latest semester grades
         returns : <grades_obj>
         """
-        return dictWrapper(**self.convert_to_dict[0])
+        return dictWrapper(mapping=self.custom_mapping, **self.convert_to_dict[0])
 
     def dataframe(self):
         """

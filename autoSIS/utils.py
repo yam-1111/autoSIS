@@ -9,9 +9,10 @@ class autoSIS:
 
     def __init__(
         self,
-        student_no,
-        student_birthday,
-        student_password,
+        # testing state
+        student_no : str,
+        student_birthday : str,
+        student_password : str,
         screenshot_path="screenshot.png",
         uri_destination="grades",
         timeout=50000,
@@ -90,9 +91,9 @@ class autoSIS:
         with open(html_path, 'w', encoding='utf-8') as file:
             file.write(self.html_content)
 
-    def get_grades(self):
+    def get_grades(self, raw_text=False, custom_mapping=None):
         try:
-            return scraper(self.html_content)
+            return scraper(self.html_content, custom_mapping=custom_mapping)
         except Exception as error:
             return error
 
