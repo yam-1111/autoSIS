@@ -1,4 +1,7 @@
 
+**update: ⚠️ this is unfinished work major bugs are expected.**
+
+
 # autoSIS
 
 simple python api for viewing grades and student portal for [PUP-SIS](https://sisstudents.pup.edu.ph/)
